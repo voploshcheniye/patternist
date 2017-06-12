@@ -1,0 +1,17 @@
+/*
+ Theme Name:   Patternist
+ Theme URI:    https://github.com/voploshcheniye/patternist-theme
+ Description:  Patternist Theme
+ Author:       Voploshcheniye Inc.
+ Author URI:   http://pattern.ist
+ Template:     blankslate
+ Version:      1.0.0
+ License:      MIT License
+ License URI:  https://github.com/voploshcheniye/patternist-theme/blob/master/LICENSE
+ Tags:         explanet, bootstrap, alien, otherkin, d3js
+ Text Domain:  patternist
+*/
+
+body {
+	background: #000;
+}
