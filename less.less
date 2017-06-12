@@ -1,0 +1,111 @@
+@beige-1: #e8aa8b;
+@beige-2: #ebbaa0;
+@beige-3: #eecbb6;
+@beige-4: #f1dbcb;
+@beige-5: #d4bbb6;
+@purple-1: #997a8c;
+@purple-2: #b69aa1;
+@blue-1: #0049ff;
+
+body {
+	background: transparent;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+}
+
+section.feature {
+	background: url(images/feature.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+    vertical-align: middle;
+    .container {
+    	padding: 40vh 0;
+    }
+}
+
+section.feature-2 {
+	background: url(images/feature-moons.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+}
+
+section.light {
+	background: @beige-5;
+}
+
+
+section.medium {
+	background: @beige-3;
+}
+
+
+section.dark {
+	background: @beige-1;
+}
+
+.container {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+// Typography
+
+a, a:hover, a:focus, a:active, a:visited {
+	background: @purple-1;
+	color: @beige-5;
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.header-serif {
+	font-family: 'Julius Sans One';
+	font-size: 126px;
+	font-weight: bold;
+	text-align: center;
+	background: url(images/weedeater.jpg) no-repeat center center;
+	background-size: cover;
+	color: @beige-1;
+	text-align: center;
+	/* -webkit-background-clip clips the background of the element to the text */
+	-webkit-text-fill-color: transparent; /* overrides the white text color in webkit browsers */
+	-webkit-background-clip: text;
+}
+
+.header-sans {
+	font-family: 'Lato', sans-serif;
+	font-size: 64px;
+	line-height: 58px;
+	color: @blue-1;
+	padding: 10px;
+	font-weight: 100;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: @blue-1;
+}
+
+
+img {
+	display: block;
+	margin: 0 auto;
+	padding-top: 75px;
+	max-height: 600px;
+}
