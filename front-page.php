@@ -34,7 +34,7 @@
 	<div class="hidden-sm hidden-xs">
 		<img id="ui-top" src="/wp-content/themes/patternist-theme/images/ui_top_rg.png">
 		<img id="ui-right" src="/wp-content/themes/patternist-theme/images/ui_right_rg.png">
-		<img id="ui-left" src="/wp-content/themes/patternist-theme/images/ui_left_rg.png">
+		<img id="ui-left" src="/wp-content/themes/patternist-theme/images/grid_left.png">
 		<img id="ui-toggle" src="/wp-content/themes/patternist-theme/images/ui_toggle_rg.png">
 	</div>
 
