@@ -1,5 +1,28 @@
 <?php get_header(); ?>
 
+<div class="ui">
+	<div class="dials">
+		<a href="#demo">
+			<img class="dial-ring" class="hidden-sm-down" src="/wp-content/themes/patternist-theme/images/dial-ring-rg.png">
+		</a>
+		<a href="#demo">
+			<img class="dial-ring" class="hidden-sm-down" src="/wp-content/themes/patternist-theme/images/dial-ring-rg.png">
+		</a>
+		<a href="#demo">
+			<img class="dial-ring" class="hidden-sm-down" src="/wp-content/themes/patternist-theme/images/dial-ring-rg.png">
+		</a>
+		<a href="#demo">
+			<img class="dial-ring" class="hidden-sm-down" src="/wp-content/themes/patternist-theme/images/dial-ring-rg.png">
+		</a>
+	</div>
+
+	<img id="ui-top" class="hidden-sm-down" src="/wp-content/themes/patternist-theme/images/ui_top_rg.png">
+	<img id="ui-right" class="hidden-sm-down" src="/wp-content/themes/patternist-theme/images/ui_right_rg.png">
+	<img id="ui-left" class="hidden-sm-down" src="/wp-content/themes/patternist-theme/images/ui_left_rg.png">
+	<img id="ui-toggle" class="hidden-sm-down" src="/wp-content/themes/patternist-theme/images/ui_toggle_rg.png">
+</div>
+
+
 <section class="feature">
 
 	<div class="container">
@@ -14,11 +37,13 @@
 
 </section>
 
+
 <section class="medium">
 
 	<img src="/wp-content/themes/patternist-theme/images/axo.png">
 	
 </section>
+
 
 <section class="feature-2">	
 
@@ -45,16 +70,6 @@
 	</div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
 
 
 <?php get_footer(); ?>
