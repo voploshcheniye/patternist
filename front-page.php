@@ -36,6 +36,9 @@
 		<img id="ui-right" src="/wp-content/themes/patternist-theme/images/grid_right.png">
 		<img id="ui-left" src="/wp-content/themes/patternist-theme/images/grid_left.png">
 		<img id="ui-toggle" src="/wp-content/themes/patternist-theme/images/grid_toggle.png">
+		<div id="language-toggle">
+				<?php if ( function_exists( 'the_msls' ) ) the_msls(); ?>
+		</div>
 	</div>
 
 	<div class="hidden-lg hidden-md">
@@ -45,7 +48,6 @@
 		<img id="ui-toggle" src="/wp-content/themes/patternist-theme/images/grid_toggle_sm.png">
 	</div>
 </div>
-
 
 <section class="feature">
 
@@ -60,7 +62,6 @@
 
 </section>
 
-
 <section class="medium">
 
 	<div class="container">
@@ -69,34 +70,55 @@
 				<iframe src="https://player.vimeo.com/video/186375975" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 			</div>
 			<div class="col-lg-5 col-md-5 col-sm-12 col-sm-12">
-				<p>
-				This is a little information about the game for public clarity. Patternist out of world game description. In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation. Replacing meaningful content with placeholder text allows designers to design the form of the content before the content itself has been produced.
-				</p>
-
-				<p>
-				Folklore is the body of expressive culture shared by a particular group of people; it encompasses the traditions common to that culture, subculture or group. These include oral traditions such as tales, proverbs and jokes. They include material culture, ranging from traditional building styles to handmade toys common to the group. Folklore also includes customary lore.
-				</p>
+				<?php
+				$original_query = $wp_query;
+				$wp_query = null;
+				$args=array('posts_per_page'=>1, 'tag' => 'intro-description');
+				$wp_query = new WP_Query( $args );
+				if ( have_posts() ) :
+				    while (have_posts()) : the_post();
+				        the_content();
+				    endwhile;
+				endif;
+				$wp_query = null;
+				$wp_query = $original_query;
+				wp_reset_postdata();
+				?>
 			</div>
 		</div>
 	</div>
 
 </section>
 
-
 <section class="feature-2">	
 
 </section>
 
-
 <a name="alloys">
-	<section id="alloys" class="dark">
+	<section id="alloys" class="dark center">
 		<div class="container">
 
-			<h1>Create your world.</h1>
 
-			<img src="/wp-content/themes/patternist-theme/images/alloy_matrix.png">
-
-			<p class="center">This is a little information about the alchemical system of the game.</p>
+			<?php
+				$original_query = $wp_query;
+				$wp_query = null;
+				$args=array('posts_per_page'=>1, 'tag' => 'alloys-description');
+				$wp_query = new WP_Query( $args );
+				if ( have_posts() ) :
+				    while (have_posts()) : the_post();
+						echo '<h1>';
+						the_title();
+						echo '</h1>';
+						if(has_post_thumbnail()){
+							the_post_thumbnail();
+						}
+				        the_content();
+				    endwhile;
+				endif;
+				$wp_query = null;
+				$wp_query = $original_query;
+				wp_reset_postdata();
+			?>
 
 		</div>
 		
@@ -106,7 +128,6 @@
 <section class="feature-3">	
 
 </section>
-
 
 <a name="interface">
 	<section class="blue">
@@ -131,17 +152,13 @@
 			</div>
 
 		</div>
-		
 	</section>
 </a>
 
 <section class="feature-5">
 	<div class="container">
-
 		<h1>WebGL Demo</h1>
-
 	</div>
-	
 </section>
 
 <a name="economics">
@@ -166,18 +183,29 @@
 		<div class="container">
 
 			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-				<p>
-				The urbanism of Paternist is a Dyson sphere, which is a hypothetical megastructure that completely encompasses a star and captures most or all of its power output. The concept was first described by Olaf Stapledon in his science fiction novel Star Maker (1937), and later popularized by Freeman Dyson in his 1960 paper "Search for Artificial Stellar Sources of Infrared Radiation".[1] Dyson speculated that such structures would be the logical consequence of the escalating energy needs of a technological civilization and would be a necessity for its long-term survival. He proposed that searching for such structures could lead to the detection of advanced, intelligent extraterrestrial life. Different types of Dyson spheres and their energy-harvesting ability would correspond to levels of technological advancement on the Kardashev scale.
-				</p>
-				<p>
-				Since then, other variant designs involving building an artificial structure or series of structures to encompass a star have been proposed in exploratory engineering or described in science fiction under the name "Dyson sphere". These later proposals have not been limited to solar-power stations, with many involving habitation or industrial elements.
-				</p>
+
+			<?php
+				$original_query = $wp_query;
+				$wp_query = null;
+				$args=array('posts_per_page'=>1, 'tag' => 'urban-description');
+				$wp_query = new WP_Query( $args );
+				if ( have_posts() ) :
+				    while (have_posts()) : the_post();
+						if(has_post_thumbnail()){
+							the_post_thumbnail();
+						}
+				        the_content();
+				    endwhile;
+				endif;
+				$wp_query = null;
+				$wp_query = $original_query;
+				wp_reset_postdata();
+			?>
 
 			</div>
 			<div class="col-lg-5 col-md-5 col-sm-12 col-sm-12">
 				<img src="/wp-content/themes/patternist-theme/images/axo.png">
 			</div>
-
 
 		</div>
 		
@@ -203,7 +231,6 @@
 
 </section>
 
-
 <section>
 	<div class="container">
 		<h1>
@@ -222,19 +249,16 @@
 
 <section class="feature-5">	
 	<div class="container">
-
-	<img src="/wp-content/themes/patternist-theme/images/landscape-topology.png">
-</div>
+		<img src="/wp-content/themes/patternist-theme/images/landscape-topology.png">
+	</div>
 </section>
 
-	<section class="blue">
-		<div class="container">
+<section class="blue">
+	<div class="container">
 
-			<h1>Game Guide</h1>
+		<h1>Game Guide</h1>
 
-		</div>
-		
-	</section>
-
+	</div>
+</section>
 
 <?php get_footer(); ?>
