@@ -44,20 +44,39 @@ jQuery(document).ready(function($) {
 			}
 		});
 
+	var vheight = $(window).height();
+	var vwidth = $(window).width();
+
+	$(document).scrollLeft(vwidth);
+
+	$( window ).resize(function() {
+  		var vheight = $(window).height();
+		var vwidth = $(window).width();
+	});
+
 	// The scroll-up function
 	function scrollUp() {
-		var vheight = $(window).height();
 		$root.animate({
 			scrollTop: (Math.ceil($(window).scrollTop() / vheight) - 1) * vheight
 		}, 1000);
 
 	};
-
 	// The scroll-down function
 	function scrollDown() {
-		var vheight = $(window).height();
 		$root.animate({
 			scrollTop: (Math.floor($(window).scrollTop() / vheight) + 1) * vheight + 1
+		}, 1000);
+	};
+
+	function scrollR() {
+		$root.animate({
+			scrollLeft: (Math.floor($(window).scrollLeft() / vwidth) + 1) * vwidth
+		}, 1000);
+	};
+
+	function scrollL() {
+		$root.animate({
+			scrollLeft: (Math.ceil($(window).scrollLeft() / vwidth) - 1) * vwidth
 		}, 1000);
 	};
 
@@ -71,7 +90,12 @@ jQuery(document).ready(function($) {
 			scrollDown();
 		};
 		//if (e.keyCode == 65) { scrollUp(); }; A Key
-		//if (e.keyCode == 68) { scrollUp(); }; D Key
+		if (e.keyCode == 68) { 
+			scrollR();
+		};
+		if (e.keyCode == 65) { 
+			scrollL();
+		};
 	});
 
 })

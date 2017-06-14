@@ -9,13 +9,14 @@
 
 body {
 	background: transparent;
-	width: 100%;
+	width: 300%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
 	z-index: 1;
 }
 
+::-webkit-scrollbar {display:none;}
 
 // Vertical centering
 
@@ -37,8 +38,8 @@ UI
 
 .dials {
 	position: fixed;
-	bottom: 35px;
-	right: 35px;
+	bottom: 25px;
+	right: 25px;
 	background: transparent;
 	img {
 		display: inline;
@@ -87,6 +88,7 @@ UI
 	top: 70px;
 	left: 25px;
 	height: 60vh;
+	max-height:100%;
 	width: auto;
 }
 
@@ -98,6 +100,12 @@ UI
 	width: auto;
 }
 
+#ui-wasd {
+	position: fixed;
+	bottom: 25px;
+	left: 25px;
+	width: auto;
+}
 
 /*******************
 Sections
@@ -106,11 +114,12 @@ Sections
 section {
 	padding: 0;
 	margin: 0;
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
-  -webkit-transform-style: preserve-3d;
- 	 -moz-transform-style: preserve-3d;
-  	transform-style: preserve-3d;
+	float: left;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 }
 
 section.center {
@@ -208,6 +217,10 @@ section.purple {
 	background: @purple-1;
 }
 
+section.right {
+	float: right;
+}
+
 
 /*******************
 Typography
@@ -226,7 +239,7 @@ h1 {
 }
 
 a, a:hover, a:focus, a:active, a:visited {
-	background: @purple-1;
+	background: transparent;
 	color: @beige-5;
 	font-family: 'Lato', sans-serif;
 	font-weight: 700;
