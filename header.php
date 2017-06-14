@@ -63,4 +63,12 @@
 	<div class="hidden-lg">
 		<img id="ui-wasd" src="/wp-content/themes/patternist-theme/images/ui_wasd_sm.png">
 	</div>
+
+	<div class="chat">
+		<span id="chat-text">
+		</span>
+	</div>
+
+
+
 </div>

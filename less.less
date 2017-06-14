@@ -18,6 +18,10 @@ body {
 
 ::-webkit-scrollbar {display:none;}
 
+html {
+overflow: -moz-scrollbars-none;
+}
+
 // Vertical centering
 
 .parent-element {
@@ -302,6 +306,19 @@ Components
 #alloys {
 	img {
 		padding-bottom: 50px;
+	}
+}
+
+.chat {
+	position: fixed;
+	bottom: 25px;
+	width: 100vw;
+	text-align: center;
+	font-family: 'Inconsolata';
+	color: #FFF;
+	font-size: 28px;
+	span {
+		background: @purple-1;
 	}
 }
 

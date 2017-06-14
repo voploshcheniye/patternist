@@ -3,7 +3,7 @@
 function my_theme_enqueue_styles() {
 
     wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
-	wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Julius+Sans+One:400,700|Poppins:700|Lato:400,700' );
+	wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Julius+Sans+One:400,700|Poppins:700|Lato:400,700|Inconsolata' );
 
     $parent_style = 'blankslate-style';
 

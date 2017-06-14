@@ -98,4 +98,45 @@ jQuery(document).ready(function($) {
 		};
 	});
 
+	var speech = new Array(
+		"You're not about to get out.",
+		"<I>Talking with you backstage</i>",
+		"Patterns don't collapse in; they collapse out.",
+		"<i>Make space out of time</i>",
+		"Visit the other island.",
+		"<i>Can't tell if you're underwater anymore.<i>"
+	);
+
+	var empty = true;
+	var interval = 20000;
+
+	function doSomething() {}
+
+		(function loop() {
+			var rand = Math.round(Math.random() * (3000 - 500)) + interval;
+				setTimeout(function() {
+				doSomething();
+			loop();  
+		}, rand);
+		if(empty) {
+			$('#chat-text').html(speech[getRandomIntInclusive(0, speech.length -1)]);
+			empty = false;
+		} else {
+			$('#chat-text').html('');
+			empty = true;
+		}
+		interval = interval * 0.9;
+
+	}());
+
+	function getRandomIntInclusive(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	doSomething();
+
+	$('#chat-text').html(speech[getRandomIntInclusive(0, speech.length -1)]);
+
 })
