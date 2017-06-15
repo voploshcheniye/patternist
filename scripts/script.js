@@ -139,4 +139,7 @@ jQuery(document).ready(function($) {
 
 	$('#chat-text').html(speech[getRandomIntInclusive(0, speech.length -1)]);
 
+	$(".modal-dialog").draggable({
+		handle: ".modal-content"
+	});
 })

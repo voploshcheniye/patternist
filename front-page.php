@@ -54,7 +54,6 @@
 	<section class="feature-2">	
 	</section>
 
-
 	<!-- Row 3 -->
 	<section class="purple">
 		<div class="container">
@@ -89,26 +88,53 @@
 		<section id="alloys" class="dark center">
 			<div class="container">
 
-				<?php
-					$original_query = $wp_query;
-					$wp_query = null;
-					$args=array('posts_per_page'=>1, 'tag' => 'alloys-description');
-					$wp_query = new WP_Query( $args );
-					if ( have_posts() ) :
-					    while (have_posts()) : the_post();
-							echo '<h1>';
-							the_title();
-							echo '</h1>';
-							if(has_post_thumbnail()){
-								the_post_thumbnail();
-							}
-					        the_content();
-					    endwhile;
-					endif;
-					$wp_query = null;
-					$wp_query = $original_query;
-					wp_reset_postdata();
-				?>
+			<img id="alloy-grid" src="/wp-content/themes/patternist-theme/images/alloy_matrix.png" alt="" usemap="#Map" />
+			<map name="Map" id="Map">
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="114,67,63,117,114,166,164,116" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="220,66,269,116,220,166,170,116" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="326,67,376,115,327,166,276,115" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="432,67,482,117,432,165,382,117" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="539,65,590,116,539,167,491,116" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="644,66,695,116,645,166,596,116" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="166,120,217,170,167,219,117,169" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="273,121,323,170,274,220,224,171" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="272,124,320,170,274,216,227,170" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal"  shape="poly" coords="333,171,379,123,425,170,379,216" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="441,169,485,124,531,169,484,214" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="592,121,641,171,592,218,546,170" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="220,176,268,224,219,271,172,224" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="279,223,326,175,374,223,326,270" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="432,175,482,224,433,273,384,223" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="539,174,588,223,539,272,491,223" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="225,276,273,227,322,276,273,324" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="333,276,379,229,427,276,380,322" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="486,228,534,277,486,325,440,278" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="325,280,374,329,326,378,278,329" />
+				<area alt="" title="" href="#myModal" data-backdrop="false" data-toggle="modal" shape="poly" coords="383,328,432,280,482,330,433,378" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="379,333,428,382,379,432,330,383" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="59,18,105,62,59,109,13,61" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="166,19,213,63,166,110,123,63" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="274,17,320,61,273,109,228,61" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="335,62,379,17,425,61,379,109" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="485,16,533,62,486,109,441,62" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="591,16,639,62,593,109,548,62" />
+				<area alt="" title="" href="#myModal2" data-backdrop="false" data-toggle="modal" shape="poly" coords="698,18,745,65,700,110,654,62" />
+			</map>
+
+			<?php
+				$original_query = $wp_query;
+				$wp_query = null;
+				$args=array('posts_per_page'=>1, 'tag' => 'alloys-description');
+				$wp_query = new WP_Query( $args );
+				if ( have_posts() ) :
+				    while (have_posts()) : the_post();
+				        the_content();
+				    endwhile;
+				endif;
+				$wp_query = null;
+				$wp_query = $original_query;
+				wp_reset_postdata();
+			?>
 
 			</div>
 			
@@ -354,9 +380,10 @@
 		</div>
 	</section>
 
-
-
-
 </div>
 
-<?php get_footer(); ?>
+
+<?php 
+	include( 'modals.php' );
+	get_footer();
+?>

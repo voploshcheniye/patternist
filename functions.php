@@ -23,6 +23,7 @@ function theme_js() {
 
 	global $wp_scripts;
 
+    wp_enqueue_script( 'jquery_ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js', array( 'jquery' ) );
     wp_enqueue_script( 'bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array( 'jquery' ) );
     wp_enqueue_script( 'ripples_js', get_stylesheet_directory_uri() . '/scripts/jquery-ripples-min.js', array( 'jquery' )  );
     wp_enqueue_script( 'script_js', get_stylesheet_directory_uri() . '/scripts/script.js', array( 'jquery' )  );

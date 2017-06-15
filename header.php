@@ -60,6 +60,7 @@
 	<div class="hidden-md hidden-sm hidden-xs">
 		<img id="ui-wasd" src="/wp-content/themes/patternist-theme/images/ui_wasd.png">
 	</div>
+
 	<div class="hidden-lg">
 		<img id="ui-wasd" src="/wp-content/themes/patternist-theme/images/ui_wasd_sm.png">
 	</div>
